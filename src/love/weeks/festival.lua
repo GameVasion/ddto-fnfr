@@ -103,15 +103,17 @@ return {
 		else
 			inst = love.audio.newSource("music/extra/glitcher/Inst.ogg", "stream")
 			voices = love.audio.newSource("music/extra/glitcher/Voices.ogg", "stream")
+			enemy = love.filesystem.load("sprites/characters/monika.lua")()
+			enemyIcon:animate("monika", false)
 
+			love.graphics.setDefaultFilter("nearest")
 			monikapixel = love.filesystem.load("sprites/characters/monikapixel.lua")()
 
 			gf2 = love.filesystem.load("sprites/pixel/girlfriend.lua")()
 
 			bf2 = love.filesystem.load("sprites/pixel/boyfriend.lua")()
 
-			enemy = love.filesystem.load("sprites/characters/monika.lua")()
-			enemyIcon:animate("monika", false)
+			
 
 			enemy.x, enemy.y = -380, 220
 			boyfriend.sizeX, boyfriend.sizeY, girlfriend.sizeX, girlfriend.sizeY, enemy.sizeX, enemy.sizeY = 0.9, 0.9, 0.9, 0.9, 0.75, 0.75
@@ -139,7 +141,7 @@ return {
 
 			function getFake()
 				cam.sizeX, cam.sizeY = 5.9, 5.9
-				cam.x, cam.y = 600, -2000
+				cam.x, cam.y = gf2.x + 80, gf2.y + 30
 				enemy.x = -200
 				enemy.y = 38
 
@@ -179,6 +181,7 @@ return {
 				obsession = 1
 				pixelTime = false
 			end
+			love.graphics.setDefaultFilter("linear")
 		end
 
 		self:initUI()
@@ -306,7 +309,7 @@ return {
 
 		if song == 4 then
 			if musicTime >= 49370 then
-				if musicTime <= 49400 then
+				if musicTime <= 71312 then
 					getFake()
 				end
 			end
@@ -316,7 +319,7 @@ return {
 				end 
 			end 
 			if musicTime >= 93256 then
-				if musicTime <= 93300 then
+				if musicTime <= 115250 then
 					getFake()
 				end
 			end

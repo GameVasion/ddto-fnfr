@@ -27,9 +27,12 @@ local pinkDots = graphics.newImage(love.graphics.newImage(graphics.imagePath("me
 
 local sideMenu = graphics.newImage(love.graphics.newImage(graphics.imagePath("menu/Credits_LeftSide")))
 
+love.graphics.setDefaultFilter("nearest")
 local options = love.filesystem.load("sprites/menu/menuButtons.lua")()
 local story = love.filesystem.load("sprites/menu/menuButtons.lua")()
 local freeplay = love.filesystem.load("sprites/menu/menuButtons.lua")()
+love.graphics.setDefaultFilter("linear")
+
 
 local menuButton = 1
 
