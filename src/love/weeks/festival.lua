@@ -104,8 +104,6 @@ return {
 			inst = love.audio.newSource("music/extra/glitcher/Inst.ogg", "stream")
 			voices = love.audio.newSource("music/extra/glitcher/Voices.ogg", "stream")
 
-			love.graphics.setDefaultFilter("nearest")
-
 			monikapixel = love.filesystem.load("sprites/characters/monikapixel.lua")()
 
 			gf2 = love.filesystem.load("sprites/pixel/girlfriend.lua")()
@@ -123,8 +121,6 @@ return {
 			street = graphics.newImage(love.graphics.newImage(graphics.imagePath("week6/street")))
 			treesBack = graphics.newImage(love.graphics.newImage(graphics.imagePath("week6/trees-back")))
 
-			
-
 			gf2:animate("idle", true)
 
 			monikapixel.x = -68
@@ -132,6 +128,7 @@ return {
 
 			bf2.y = 40
 			bf2.x = 50
+
 
 			trees = love.filesystem.load("sprites/week6/trees.lua")()
 			petals = love.filesystem.load("sprites/week6/petals.lua")()
@@ -142,7 +139,7 @@ return {
 
 			function getFake()
 				cam.sizeX, cam.sizeY = 5.9, 5.9
-				cam.x, cam.y = 70, 30
+				cam.x, cam.y = 600, -2000
 				enemy.x = -200
 				enemy.y = 38
 
@@ -158,8 +155,6 @@ return {
 				boyfriend.x = 50
 				obsession = 2
 				pixelTime = true
-
-				love.graphics.setDefaultFilter("nearest")
 			end
 
 			function getReal()
@@ -183,8 +178,6 @@ return {
 				boyfriend.x, boyfriend.y = 260, 320
 				obsession = 1
 				pixelTime = false
-
-				love.graphics.setDefaultFilter("linear")
 			end
 		end
 
@@ -308,6 +301,8 @@ return {
 				boyfriend:animate("kk", false)
 			end
 		end
+		
+		
 
 		if song == 4 then
 			if musicTime >= 49370 then
@@ -358,7 +353,6 @@ return {
 	draw = function(self)
 		if not pixelTime then
 			love.graphics.push()
-				love.graphics.setDefaultFilter("linear")
 				love.graphics.translate(graphics.getWidth() / 2, graphics.getHeight() / 2)
 				love.graphics.scale(cam.sizeX, cam.sizeY)
 
@@ -407,7 +401,6 @@ return {
 				love.graphics.clear()
 
 				love.graphics.push()
-					love.graphics.setDefaultFilter("nearest")
 					love.graphics.translate(128, 72)
 					love.graphics.scale(cam.sizeX, cam.sizeY)
 
