@@ -38,6 +38,7 @@ return {
 		curtains.y = -100
 
 		enemy = girlfriend -- For compatibility with weeks
+		                   -- among
 
 		girlfriend.x, girlfriend.y = 30, -90
 		boyfriend.x, boyfriend.y = 260, 100

@@ -356,6 +356,8 @@ return {
 	draw = function(self)
 		if not pixelTime then
 			love.graphics.push()
+			love.graphics.translate(0, 0)
+				love.graphics.setColor(115/255, 115/255, 115/255)
 				love.graphics.translate(graphics.getWidth() / 2, graphics.getHeight() / 2)
 				love.graphics.scale(cam.sizeX, cam.sizeY)
 
